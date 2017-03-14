@@ -5,22 +5,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
     <!-- Include the AngularJS routing library -->
-    <script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
     <title>Weather App</title>
 	<meta charset="utf-8" />
 </head>
 <body>
     <div ng-app="WeatherApp" ng-controller="WeatherController">
-        <div ng-view>
-            <input ng-model="city.name" />
-            <input type="submit" ng-click="ForecastByCityName(city.name)" />
-            <span>{{weatherForecast}}</span>
-            {{a}}
-        </div>
+        <input ng-model="city.name" />
+        <a href="#/city"><input type="submit" ng-click="ForecastByCityName(city.name)" /></a>
+        <span>{{weatherForecast.data.city.name}}</span>
+
+        <div ng-view></div>
     </div>
 
+
     
-    <div>no ja pierdole!!!!!!!!!!!!!</div>
 
 
     <!-- Modules -->

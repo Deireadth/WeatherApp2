@@ -1,9 +1,13 @@
-var app = angular.module("WeatherApp", []);
+var app = angular.module("WeatherApp", ['ngRoute']);
 
 app.config(function ($routeProvider) {
     $routeProvider
-    .when("/", {
-        controller: "WeatherController",
-        templateUrl: "weather.html"
-    })//kurwa kurwanbnnbnbfdsf
+    .when('/', {
+        
+        templateUrl: 'views/empty.html'
+    })
+    .when('/city', {
+        
+        templateUrl: 'views/city.html'
+    })
 });

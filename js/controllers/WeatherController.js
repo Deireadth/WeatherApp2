@@ -1,4 +1,8 @@
-app.controller('WeatherController', ['$scope','forecast', function($scope, forecast) {
+app.controller('WeatherController', ['$scope', '$location', 'forecast', function ($scope, $location, forecast) {
+    $scope.go = function (path) {
+        $location.path(path);
+        $scope.ForecastByCityName($scope.city.name)
+    };
     $scope.city = {
         name: 'London',
         id: '',
