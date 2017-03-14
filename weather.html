@@ -11,11 +11,16 @@
 </head>
 <body>
     <div ng-app="WeatherApp" ng-controller="WeatherController">
-        <span>{{weatherForecast}}</span>
+        <div ng-view>
+            <input ng-model="city.name" />
+            <input type="submit" ng-click="ForecastByCityName(city.name)" />
+            <span>{{weatherForecast}}</span>
+            {{a}}
+        </div>
     </div>
 
-
-
+    
+    <div>no ja pierdole!!!!!!!!!!!!!</div>
 
 
     <!-- Modules -->

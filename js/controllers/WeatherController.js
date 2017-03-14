@@ -5,14 +5,18 @@ app.controller('WeatherController', ['$scope','forecast', function($scope, forec
         coordinates: '',
         zipCode: '',
     }
-
-    //$scope.ForecastByCityName = function() {
-    //    $scope.weatherForecast = forecasat.getForecastByCityName($scope.city.name)
-    //}
+    //$scope.a = forecast.jakkolwiek()
+    $scope.ForecastByCityName = function(cityName) {
+        forecast.getForecastByCityName(cityName).then(function (response) {
+            //console.log(response);
+            $scope.weatherForecast = response;
+        });
+    }
     //$scope.ForecastByCityName()
 
-    forecast.success(function (data) {
-        $scope.weatherForecast = data;
-    });
+    //forecast.getForecastByCityName($scope.city.name).then(function (response) {
+    //    //console.log(response);
+    //    $scope.weatherForecast = response;
+    //});
 }
 ]);
